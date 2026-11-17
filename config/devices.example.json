@@ -1,0 +1,20 @@
+{
+  "hue": {
+    "bridgeIp": "",
+    "applicationKey": ""
+  },
+  "tapo": {
+    "account": {
+      "email": "",
+      "password": ""
+    },
+    "devices": [
+      { "id": "living-room-strip", "name": "Living Room Strip", "ip": "", "model": "L900" }
+    ]
+  },
+  "nanoleaf": {
+    "devices": [
+      { "id": "panels-1", "name": "Nanoleaf Panels", "ip": "", "token": "" }
+    ]
+  }
+}

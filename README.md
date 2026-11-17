@@ -2,6 +2,17 @@
 
 A single web page, served from this machine, that controls Philips Hue lights, TP-Link Tapo bulbs/strips, and Nanoleaf panels from any device on your home network — no cloud relay for control traffic, no per-device apps.
 
+<img src="docs/dashboard.png" alt="The dashboard on a phone, showing Hue, Tapo and Nanoleaf devices with power, brightness and colour controls" width="320">
+
+## Try it without any hardware
+
+```
+npm install
+npm run demo
+```
+
+Demo mode replaces every vendor with an in-memory fake (including an offline device), so you can click around without any lights, credentials or network access. Nothing real is contacted.
+
 ## How it works
 
 - **Philips Hue** — talks to your Hue Bridge's local API (`https://<bridge-ip>/clip/v2/...`).

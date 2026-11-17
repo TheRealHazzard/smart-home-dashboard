@@ -2,12 +2,17 @@ import { loadConfig } from './config.js';
 import { createHueAdapter } from './adapters/hue.js';
 import { createNanoleafAdapter } from './adapters/nanoleaf.js';
 import { createTapoAdapter } from './adapters/tapo.js';
+import { createDemoAdapters } from './adapters/demo.js';
 
 const CACHE_MS = 2000;
 
 let cache = { at: 0, devices: [] };
 
+// `npm run demo` swaps every vendor for an in-memory fake, so no real devices are touched.
+const DEMO = process.argv.includes('--demo') || process.env.DEMO === '1';
+
 function buildAdapters() {
+  if (DEMO) return createDemoAdapters();
   const config = loadConfig();
   return {
     hue: createHueAdapter(config.hue),
